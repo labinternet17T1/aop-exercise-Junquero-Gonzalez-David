@@ -18,6 +18,8 @@ public class LoggerAdvice {
     @Pointcut("execution(* cat.tecnocampus.application.Controller.find*(..))")
     public void findNotes() {}
 
+    @Pointcut("execution(* cat.tecnocampus.persintence.ClassroomDAO.insertBatch(..))")
+    public void insertBatchNote() {}
 
     @Before("classroomAttribute()")
     public void beforeClassroomAttribute() {
@@ -30,10 +32,7 @@ public class LoggerAdvice {
     }
 
 
-    /*
-    @Pointcut("execution(* cat.tecnocampus.persintence.ClassroomDAO.insertBatch(..))")
-    public void insertBatchNote() {}
-
+/*
     @Around("insertBatchNote()")
     public void aroundInsertBatch(){
         logger.info("LAST");
